@@ -2,9 +2,6 @@
 
 ##Equipe
 Matheus Alves Medeiros – 2323804 
-Carlos Henrique Alves, 2323853
-Wiulis de Araujo Monteiro – 2326322
-Nicole Stefhany Monteiro Amed – 2326323
 
 ## 1. Objetivo do Projeto
 

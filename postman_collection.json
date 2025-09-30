@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-1234-abcdef123456",
+		"name": "N703 - Alerta Alagamentos API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar Previsão de Chuva",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{API_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/chuva",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"chuva"
+					]
+				},
+				"description": "Consulta os dados de chuva mais recentes da API OpenWeather para a cidade de Fortaleza."
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar Alerta de Alagamento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{API_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"ALERTA: Risco Iminente de Alagamento\",\n    \"message\": \"Fortes chuvas detectadas. Evite áreas de risco e siga as recomendações da defesa civil.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/alerta",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"alerta"
+					]
+				},
+				"description": "Dispara o envio de um e-mail de alerta para os moradores cadastrados no sistema."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "API_TOKEN",
+			"value": "seu-token-secreto-para-autenticacao"
+		}
+	]
+}
